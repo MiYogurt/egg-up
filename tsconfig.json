@@ -20,7 +20,11 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "inlineSourceMap": true,
-    "importHelpers": true
+    "importHelpers": true,
+    "baseUrl": ".",
+    "paths": {
+      "@model/*": ["app/model/*"]
+    }
   },
   "exclude": ["app/public", "app/views", "node_modules*"]
 }

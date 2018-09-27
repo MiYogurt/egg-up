@@ -1,5 +1,5 @@
 {
-  "name": "model",
+  "name": "egg-up",
   "version": "1.0.0",
   "description": "",
   "private": true,
@@ -16,20 +16,23 @@
     "cov": "egg-bin cov -r egg-ts-helper/register",
     "tsc": "ets && tsc -p tsconfig.json",
     "ci": "npm run lint && npm run cov && npm run tsc",
-    "autod": "autod",
     "lint": "tslint --project . -c tslint.json",
     "clean": "ets clean"
+  },
+  "_moduleAliases": {
+    "@model": "app/model"
   },
   "dependencies": {
     "egg": "^2.6.1",
     "egg-scripts": "^2.6.0",
+    "module-alias": "^2.1.0",
     "mysql2": "^1.6.1",
     "reflect-metadata": "^0.1.12",
     "typeorm": "^0.2.7"
   },
   "devDependencies": {
-    "@types/mocha": "^2.2.40",
-    "@types/node": "^7.0.12",
+    "@types/mocha": "^5.2.5",
+    "@types/node": "^10.11.0",
     "@types/supertest": "^2.0.0",
     "autod": "^3.0.1",
     "autod-egg": "^1.1.0",
@@ -37,9 +40,9 @@
     "egg-ci": "^1.8.0",
     "egg-mock": "^3.16.0",
     "egg-ts-helper": "^1.4.2",
+    "plop": "^2.1.0",
     "tslib": "^1.9.0",
-    "tslint": "^4.0.0",
-    "typescript": "^2.8.1"
+    "typescript": "^3.0.3"
   },
   "engines": {
     "node": ">=8.9.0"
@@ -51,9 +54,6 @@
     "type": "git",
     "url": ""
   },
-  "eslintIgnore": [
-    "coverage"
-  ],
   "author": "",
   "license": "MIT"
 }

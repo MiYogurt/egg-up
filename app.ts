@@ -1,29 +1,19 @@
-import 'reflect-metadata'
-import { Application } from 'egg'
-import { createConnection } from 'typeorm'
-import * as path from 'path'
-export default function(app: Application) {
-  app.beforeStart(async () => {
-    const modelDir = path.join(app.baseDir, 'app', 'model')
-    const models: any[] = []
+import 'module-alias/register';
 
-    app.loader.loadToApp(modelDir, '_model_source', {
-      caseStyle: 'upper',
-      filter(model) {
-        models.push(model)
-        return false
-      }
-    })
-    console.log(models)
+import 'reflect-metadata';
+import { Application } from 'egg';
+import { createConnection } from 'typeorm';
+
+class appHooks {
+  constructor(private app: Application) {}
+  async didLoad() {
+    const { app } = this;
+    const models: any[] = app.loadModel();
     app.model = await createConnection({
-      type: 'mysql',
-      host: 'localhost',
-      username: 'root',
-      database: 'typeorm',
-      port: 3306,
       entities: models,
-      synchronize: true,
-      logging: true
-    })
-  })
+      ...(<any>app.config.typeorm)
+    });
+  }
 }
+
+export default appHooks;

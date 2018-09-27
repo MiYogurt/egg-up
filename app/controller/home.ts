@@ -1,6 +1,6 @@
 import { Controller } from 'egg'
-import Photo from '../model/photo'
-import PhotoMetadata from '../model/photo-metadata'
+import Photo from "@model/photo";
+import PhotoMetadata from '@model/photo-metadata'
 
 export default class HomeController extends Controller {
   public async index() {

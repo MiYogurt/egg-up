@@ -1,4 +1,5 @@
 import { EggAppConfig, EggAppInfo, PowerPartial } from 'egg';
+import {ConnectionOptions} from 'typeorm';
 
 // for config.{env}.ts
 export type DefaultConfig = PowerPartial<EggAppConfig & BizConfig>;
@@ -6,6 +7,17 @@ export type DefaultConfig = PowerPartial<EggAppConfig & BizConfig>;
 // app special config scheme
 export interface BizConfig {
   sourceUrl: string;
+  typeorm:
+    | {
+        type: string;
+        host: string;
+        username: string;
+        database: string;
+        port: number;
+        synchronize: boolean;
+        logging: boolean;
+      }
+    | ConnectionOptions;
 }
 
 export default (appInfo: EggAppInfo) => {
@@ -20,6 +32,16 @@ export default (appInfo: EggAppInfo) => {
 
   // add your config here
   config.middleware = [];
+
+  config.typeorm = {
+    type: 'mysql',
+    host: 'localhost',
+    username: 'root',
+    database: 'typeorm',
+    port: 3306,
+    synchronize: true,
+    logging: true
+  }
 
   return config;
 };

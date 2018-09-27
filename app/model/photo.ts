@@ -16,7 +16,7 @@ export default class Photo extends BaseEntity {
   @Column()
   filename: string
 
-  @Column('double')
+  @Column('double', {default: 0})
   views: number
 
   @Column()
