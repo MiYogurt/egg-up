@@ -2,10 +2,10 @@
 // Do not modify this file!!!!!!!!!
 
 import 'egg'; // Make sure ts to import egg declaration at first
-import Test from '../../../app/service/test';
+import CheckBySchemas from '../../../app/middleware/check_by_schemas';
 
 declare module 'egg' {
-  interface IService {
-    test: Test;
+  interface IMiddleware {
+    checkBySchemas: typeof CheckBySchemas;
   }
 }

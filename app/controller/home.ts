@@ -1,6 +1,6 @@
 import { Controller } from 'egg'
 import Photo from "@model/photo";
-import PhotoMetadata from '@model/photo-metadata'
+import PhotoMetadata from '@model/photo_metadata'
 
 export default class HomeController extends Controller {
   public async index() {
@@ -11,7 +11,7 @@ export default class HomeController extends Controller {
     photo.filename = 'photo-with-bears.jpg'
     photo.views = 1
     photo.isPublished = true
-    ctx.body = await Photo.find()
+    ctx.ok(await Photo.find());
   }
 
   /**

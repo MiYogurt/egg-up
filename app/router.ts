@@ -1,8 +1,9 @@
 import { Application } from 'egg';
 
 export default (app: Application) => {
-  const { controller, router } = app;
+  const { controller, router, middleware } = app;
+  const checkBySchemas = middleware.checkBySchemas;
 
-  router.get('/', controller.home.index);
+  router.get('/', checkBySchemas('home'), controller.home.index);
   router.get('/add', controller.home.onetone);
 };

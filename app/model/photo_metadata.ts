@@ -6,7 +6,7 @@ import {
   JoinColumn,
   BaseEntity
 } from 'typeorm'
-import Photo from './photo'
+import Photo from '@model/photo'
 
 @Entity()
 export default class PhotoMetadata extends BaseEntity {

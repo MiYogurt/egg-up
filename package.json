@@ -7,8 +7,8 @@
     "typescript": true
   },
   "scripts": {
-    "start": "egg-scripts start --daemon --title=egg-server-model",
-    "stop": "egg-scripts stop --title=egg-server-model",
+    "start": "eggctl start --daemon --title=egg-server-up",
+    "stop": "eggctl stop --title=egg-server-up",
     "dev": "egg-bin dev -r egg-ts-helper/register",
     "debug": "egg-bin debug -r egg-ts-helper/register",
     "test-local": "egg-bin test -r egg-ts-helper/register",
@@ -25,6 +25,7 @@
   "dependencies": {
     "egg": "^2.6.1",
     "egg-scripts": "^2.6.0",
+    "egg-y-validator": "^1.1.7",
     "module-alias": "^2.1.0",
     "mysql2": "^1.6.1",
     "reflect-metadata": "^0.1.12",

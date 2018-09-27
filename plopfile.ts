@@ -9,7 +9,7 @@ export = (plop) =>  {
         actions: [{
             type: 'add',
             path: 'app/controller/{{name}}.ts',
-            templateFile: 'plop-templates/controller.hbs'
+            templateFile: 'plop_templates/controller.hbs'
         }]
     });
 };

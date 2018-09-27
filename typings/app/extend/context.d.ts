@@ -2,10 +2,8 @@
 // Do not modify this file!!!!!!!!!
 
 import 'egg'; // Make sure ts to import egg declaration at first
-import Test from '../../../app/service/test';
-
+import ExtendContext from '../../../app/extend/context';
 declare module 'egg' {
-  interface IService {
-    test: Test;
-  }
+  type ExtendContextType = typeof ExtendContext;
+  interface Context extends ExtendContextType { }
 }
