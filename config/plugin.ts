@@ -10,6 +10,10 @@ const plugin: EggPlugin = {
   validator : {
     enable: true,
     package: 'egg-y-validator'
+  },
+  aop: {
+    enable: true,
+    package: 'egg-aop'
   }
 };
 

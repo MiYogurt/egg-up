@@ -3,3 +3,4 @@
 
 import 'egg'; // Make sure ts to import egg declaration at first
 import 'egg-y-validator';
+import 'egg-aop';

@@ -22,11 +22,13 @@
   "_moduleAliases": {
     "@model": "app/model",
     "@framework": "app/framework",
-    "@middleware": "app/middleware"
+    "@middleware": "app/middleware",
+    "@service": "app/service"
   },
   "dependencies": {
     "@sindresorhus/is": "^0.11.0",
     "egg": "^2.6.1",
+    "egg-aop": "^0.5.3",
     "egg-scripts": "^2.6.0",
     "egg-y-validator": "^1.1.7",
     "module-alias": "^2.1.0",

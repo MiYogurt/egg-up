@@ -1,8 +1,10 @@
 import { Service } from 'egg';
+import {context} from 'egg-aop';
 
 /**
  * Test Service
  */
+@context()
 export default class Test extends Service {
 
   /**
