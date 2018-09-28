@@ -1,9 +1,11 @@
 import { Application } from 'egg';
+import ProxyRouter from '@framework/proxy_router';
 
 export default (app: Application) => {
   const { controller, router, middleware } = app;
-  const checkBySchemas = middleware.checkBySchemas;
+  const r = ProxyRouter(router)
 
-  router.get('/', checkBySchemas('home'), controller.home.index);
+  
+  r.get('home','/', controller.home.index);
   router.get('/add', controller.home.onetone);
 };

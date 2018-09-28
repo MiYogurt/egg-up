@@ -34,6 +34,6 @@ export default class HomeController extends Controller {
     metadata.orientation = 'portait'
     metadata.photo = photo
     await photo.save()
-    await metadata.save()
+    this.ctx.ok(await metadata.save())
   }
 }

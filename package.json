@@ -20,9 +20,12 @@
     "clean": "ets clean"
   },
   "_moduleAliases": {
-    "@model": "app/model"
+    "@model": "app/model",
+    "@framework": "app/framework",
+    "@middleware": "app/middleware"
   },
   "dependencies": {
+    "@sindresorhus/is": "^0.11.0",
     "egg": "^2.6.1",
     "egg-scripts": "^2.6.0",
     "egg-y-validator": "^1.1.7",

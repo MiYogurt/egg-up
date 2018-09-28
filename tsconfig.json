@@ -23,7 +23,9 @@
     "importHelpers": true,
     "baseUrl": ".",
     "paths": {
-      "@model/*": ["app/model/*"]
+      "@model/*": ["app/model/*"],
+      "@framework/*": ["app/framework/*"],
+      "@*":["app/*"]
     }
   },
   "exclude": ["app/public", "app/views", "node_modules*"]
