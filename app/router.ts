@@ -7,6 +7,7 @@ export default (app: Application) => {
 
   
   r.get('home','/', controller.home.index);
+  router.get('/video/:path', controller.video.push)
   router.get('/add', controller.home.onetone);
   router.get('/test', controller.home.test);
 };

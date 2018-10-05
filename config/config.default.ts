@@ -46,6 +46,16 @@ export default (appInfo: EggAppInfo) => {
     logging: true
   };
 
+  config.onerror = {
+    appErrorFilter(err, ctx) {
+      const errnoCodeWhitelist = ['EPIPE'];
+      if (errnoCodeWhitelist.includes(err.errno)) {
+        return false
+      }
+      return true
+    },
+  };
+
   config.validator = {
     open: 'zh-CN',
     languages: { 'zh-CN': { required: '%s 字段必填' } },

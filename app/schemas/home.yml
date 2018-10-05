@@ -1,3 +1,8 @@
 name:
-  type: 'string'
-  required: true
+  - required: true
+  - validator: !!js/function >
+      function validator(ctx) {
+        return function (rule, value, callback, source, options) {
+          callback([{field:'name', message:'错误'}])
+        }
+      }
