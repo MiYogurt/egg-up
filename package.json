@@ -9,7 +9,7 @@
   "scripts": {
     "start": "eggctl start --daemon --title=egg-server-up",
     "stop": "eggctl stop --title=egg-server-up",
-    "dev": "egg-bin dev -r egg-ts-helper/register",
+    "dev": "egg-bin dev -r egg-ts-helper/register -r module-alias/register",
     "debug": "egg-bin debug -r egg-ts-helper/register",
     "test-local": "egg-bin test -r egg-ts-helper/register",
     "test": "npm run lint -- --fix && npm run test-local",
@@ -32,6 +32,7 @@
     "egg-aop": "^0.5.3",
     "egg-scripts": "^2.6.0",
     "egg-y-validator": "^1.1.7",
+    "elasticsearch": "^15.1.1",
     "module-alias": "^2.1.0",
     "mysql2": "^1.6.1",
     "reflect-metadata": "^0.1.12",
@@ -39,6 +40,7 @@
   },
   "devDependencies": {
     "@types/mocha": "^5.2.5",
+    "@types/elasticsearch": "^5.0.26",
     "@types/node": "^10.11.0",
     "@types/supertest": "^2.0.0",
     "autod": "^3.0.1",

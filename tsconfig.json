@@ -23,8 +23,8 @@
     "importHelpers": true,
     "baseUrl": ".",
     "paths": {
-      "@model/*": ["app/model/*"],
-      "@framework/*": ["app/framework/*"],
+      // "@model/*": ["app/model/*"],
+      // "@framework/*": ["app/framework/*"],
       "@*":["app/*"]
     }
   },

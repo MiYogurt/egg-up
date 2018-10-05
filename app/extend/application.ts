@@ -1,5 +1,8 @@
 import * as path from 'path';
 import { Application } from 'egg';
+import * as elasticsearch from 'elasticsearch';
+
+const CacheMap = new Map()
 
 export default {
   loadModel(this: Application) {
@@ -13,6 +16,17 @@ export default {
       }
     });
     return models;
+  },
+  get CacheMap(){
+    return CacheMap;
+  },
+  get elasticsearch(this: Application): elasticsearch.Client{
+    if (CacheMap.get('elasticsearch')) {
+      return CacheMap.get('elasticsearch');
+    }
+    let instance = new elasticsearch.Client(this.config.elasticsearch)
+    CacheMap.set('elasticsearch', instance);
+    return instance
   }
 };
 

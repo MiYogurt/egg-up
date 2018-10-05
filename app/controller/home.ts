@@ -51,4 +51,10 @@ export default class HomeController extends Controller {
     await photo.save();
     this.ctx.ok(await metadata.save());
   }
+
+  async query(){
+    const {app,ctx} = this;
+    const body = await app.elasticsearch.search({q: ctx.query.q, index:'egg_up', type: '_doc'})
+    ctx.body = body
+  }
 }

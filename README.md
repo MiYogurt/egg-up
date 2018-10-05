@@ -78,3 +78,16 @@ import Photo from '@model/photo';
     "@*":["app/*"]
 }
 ```
+
+## 添加视频推流示例
+
+`controller/video/push`
+
+## 添加全文检索引擎，自行安装 elasticearch 配置中文分词 ik。
+
+`controller/home/query`
+
+在计划任务里面同步数据到 `elasticsearch`
+
+
+![](./app/public/query.png)

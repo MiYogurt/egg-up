@@ -8,6 +8,10 @@ export type DefaultConfig = PowerPartial<EggAppConfig & BizConfig>;
 // app special config scheme
 export interface BizConfig {
   sourceUrl: string;
+  elasticsearch: {
+    host: string,
+    log: string, 
+  },
   typeorm:
     | {
         type: string;

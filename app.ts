@@ -14,6 +14,10 @@ class appHooks {
       ...(<any>app.config.typeorm)
     });
   }
+  async serverDidReady() {
+    const { app } = this;
+    await app.runSchedule('elasticsearch_indices');
+  }
 }
 
 export default appHooks;
